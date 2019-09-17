@@ -14,15 +14,15 @@ class ConverTextModel {
     let baseUrl = "https://labs.goo.ne.jp/api/hiragana"
 
     
-    func fetch(convertText: String, completion: @escaping ([TextEntity]) -> ()) {
+    func fetch(text: String, completion: @escaping (TextEntity) -> ()) {
         
-        guard let convertText = convertText.addingPercentEncoding(withAllowedCharacters: NSCharacterSet.urlQueryAllowed) else {
+        guard let text = text.addingPercentEncoding(withAllowedCharacters: NSCharacterSet.urlQueryAllowed) else {
             print("キーワードの変換に失敗しました。")
             return
         }
         
         let parameters:[String: Any] = [
-            "sentence": convertText,
+            "sentence": text,
             "app_id": "add5342668f33cdb2deb6e49c9bb75fe8ec6f008369033697320ee2f5fc0f758",
             "output_type": "hiragana"
         ]
@@ -47,11 +47,12 @@ class ConverTextModel {
             }
             
             let json = JSON(val)
-            let contents = json["data"].arrayValue
-            
-            let data = contents.map { data in
-                return TextEntity(item: data)
-            }
+//            let contents = json["data"].arrayValue
+//
+//            let data = contents.map { data in
+//                return TextEntity(item: data)
+//            }
+            let data = TextEntity(item: json)
             completion(data)
         }
     }

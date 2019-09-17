@@ -12,13 +12,21 @@ class ViewController: UIViewController {
 
     @IBOutlet weak var inputTextField: UITextField!
     @IBOutlet weak var outputLabel: UILabel!
-    @IBOutlet weak var convertButton: UIButton!
+    
+    let viewModel = ConvertTextViewModel()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
     }
 
-
+    
+    @IBAction func convertButton(_ sender: UIButton) {
+//        viewModel.fetch(text: ) {
+//            <#code#>
+//        }
+        
+    }
+    
 }
 
