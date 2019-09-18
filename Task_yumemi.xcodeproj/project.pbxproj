@@ -15,6 +15,7 @@
 		C1A5D3762330C25C00783C58 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C1A5D3742330C25C00783C58 /* LaunchScreen.storyboard */; };
 		C1A5D3A02330F99E00783C58 /* ConvertTextModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1A5D39F2330F99E00783C58 /* ConvertTextModel.swift */; };
 		C1A5D3A42331595000783C58 /* ConvertTextViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1A5D3A32331595000783C58 /* ConvertTextViewModel.swift */; };
+		C1A5D3A92332A65200783C58 /* RubiModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1A5D3A82332A65200783C58 /* RubiModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,6 +30,7 @@
 		C1A5D3772330C25C00783C58 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C1A5D39F2330F99E00783C58 /* ConvertTextModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConvertTextModel.swift; sourceTree = "<group>"; };
 		C1A5D3A32331595000783C58 /* ConvertTextViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConvertTextViewModel.swift; sourceTree = "<group>"; };
+		C1A5D3A82332A65200783C58 /* RubiModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RubiModel.swift; sourceTree = "<group>"; };
 		C476E1A6835C68A5F73D7267 /* Pods-Task_yumemi.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Task_yumemi.release.xcconfig"; path = "Pods/Target Support Files/Pods-Task_yumemi/Pods-Task_yumemi.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -97,6 +99,7 @@
 			isa = PBXGroup;
 			children = (
 				C1A5D39F2330F99E00783C58 /* ConvertTextModel.swift */,
+				C1A5D3A82332A65200783C58 /* RubiModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -234,6 +237,7 @@
 			files = (
 				C1A5D3A02330F99E00783C58 /* ConvertTextModel.swift in Sources */,
 				C1A5D36E2330C25A00783C58 /* ViewController.swift in Sources */,
+				C1A5D3A92332A65200783C58 /* RubiModel.swift in Sources */,
 				C1A5D36C2330C25A00783C58 /* AppDelegate.swift in Sources */,
 				C1A5D3A42331595000783C58 /* ConvertTextViewModel.swift in Sources */,
 			);

@@ -13,7 +13,6 @@ class ConverTextModel {
     
     let baseUrl = "https://labs.goo.ne.jp/api/hiragana"
 
-    
     func fetch(text: String, completion: @escaping (TextEntity) -> ()) {
         
         guard let text = text.addingPercentEncoding(withAllowedCharacters: NSCharacterSet.urlQueryAllowed) else {

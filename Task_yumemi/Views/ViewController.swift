@@ -15,6 +15,8 @@ class ViewController: UIViewController {
     
     let viewModel = ConvertTextViewModel()
     
+    let rubiModel = RubiModel()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
@@ -22,10 +24,15 @@ class ViewController: UIViewController {
 
     
     @IBAction func convertButton(_ sender: UIButton) {
-//        viewModel.fetch(text: ) {
-//            <#code#>
+//        viewModel.fetch(text: "東西南北") {
+//            print(self.viewModel.convertText!.converted)
 //        }
         
+        rubiModel.fetch(text: "東西") { (res, err) in
+            DispatchQueue.main.async {
+                print(res?.converted)
+            }
+        }
     }
     
 }
