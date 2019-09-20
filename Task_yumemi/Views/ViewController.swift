@@ -20,6 +20,8 @@ class ViewController: UIViewController {
     
     let rubiModel = RubiModel()
     
+    var starState: Int = 0
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
@@ -38,8 +40,15 @@ class ViewController: UIViewController {
     }
     
     @IBAction func favoriteButton(_ sender: UIButton) {
+        
+        if starState == 0 {
+            sender.setTitle("★", for: .normal)
+            starState = 1
+        } else {
+        
+            sender.setTitle("☆", for: .normal)
+            starState = 0
+        }
     }
-    
-    
 }
 
