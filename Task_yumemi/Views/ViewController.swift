@@ -22,6 +22,9 @@ class ViewController: UIViewController {
     
     var starState: Int = 0
     
+    var inputArray = [String]()
+    var outputArray = [String]()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -44,14 +47,35 @@ class ViewController: UIViewController {
     
     @IBAction func favoriteButton(_ sender: UIButton) {
         
+        let userDefault = UserDefaults.standard
+        
         if starState == 0 {
+
+            if userDefault.object(forKey: "inputArray") != nil {
+                
+                self.inputArray = userDefault.object(forKey: "inputArray") as! [String]
+                self.outputArray = userDefault.object(forKey: "outputArray") as! [String]
+            }
+
+            self.inputArray.append(self.inputTextField.text!)
+            self.outputArray.append(self.outputLabel.text!)
+            
+            print(outputArray.count)
             sender.setTitle("★", for: .normal)
             starState = 1
         } else {
+            
+            self.inputArray.removeLast()
+            self.outputArray.removeLast()
         
+            print(outputArray.count)
+
             sender.setTitle("☆", for: .normal)
             starState = 0
         }
+        
+        userDefault.set(self.inputArray, forKey: "inputArray")
+        userDefault.set(self.outputArray, forKey: "outputArray")
     }
 }
 
