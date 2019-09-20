@@ -60,9 +60,6 @@
                                         <state key="normal" title="☆">
                                             <color key="titleColor" red="0.96950322389999999" green="0.81942337750000005" blue="0.27808019519999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         </state>
-                                        <connections>
-                                            <action selector="favoriteButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="832-rn-seg"/>
-                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -100,9 +97,10 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="Item" id="4It-hv-Kpu"/>
                     <connections>
+                        <outlet property="favoriteButton" destination="FH6-jf-EZu" id="YMQ-nw-XaG"/>
                         <outlet property="inputText" destination="YwM-Ds-BLl" id="MQD-VR-AJd"/>
                         <outlet property="inputTextField" destination="mI4-ZV-LNj" id="vZC-QK-rWq"/>
-                        <outlet property="outputLabel" destination="jQo-Y0-ngc" id="NpB-ok-s7a"/>
+                        <outlet property="outputLabel" destination="jQo-Y0-ngc" id="vXd-r0-nC2"/>
                         <outlet property="resultView" destination="yhD-sV-Unj" id="TbU-eF-KZG"/>
                     </connections>
                 </viewController>

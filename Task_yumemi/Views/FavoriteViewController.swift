@@ -23,9 +23,14 @@ class FavoriteViewController: UIViewController, UITableViewDelegate, UITableView
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(true)
+        super.viewWillAppear(animated)
         
-        
+        if UserDefaults.standard.object(forKey: "inputArray") != nil {
+            
+            self.inputArray = UserDefaults.standard.object(forKey: "inputArray") as! [String]
+            self.outputArray = UserDefaults.standard.object(forKey: "outputArray") as! [String]
+            tableView.reloadData()
+        }
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -34,9 +39,26 @@ class FavoriteViewController: UIViewController, UITableViewDelegate, UITableView
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
-        cell.backgroundColor = .red
+        cell.textLabel?.text = inputArray[indexPath.row]
         
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+        return true
+    }
+    
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        
+        if editingStyle == .delete {
+            inputArray.remove(at: indexPath.row)
+            outputArray.remove(at: indexPath.row)
+            
+            tableView.reloadData()
+            
+            UserDefaults.standard.set(self.inputArray, forKey: "inputArray")
+            UserDefaults.standard.set(self.outputArray, forKey: "outputArray")
+        }
     }
     
 }
