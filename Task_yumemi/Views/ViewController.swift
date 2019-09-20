@@ -12,6 +12,9 @@ class ViewController: UIViewController {
 
     @IBOutlet weak var inputTextField: UITextField!
     @IBOutlet weak var outputLabel: UILabel!
+    @IBOutlet weak var resultView: UIView!
+    
+    @IBOutlet weak var inputText: UILabel!
     
     let viewModel = ConvertTextViewModel()
     
@@ -24,16 +27,19 @@ class ViewController: UIViewController {
 
     
     @IBAction func convertButton(_ sender: UIButton) {
-//        viewModel.fetch(text: "東西南北") {
-//            print(self.viewModel.convertText!.converted)
-//        }
+
         
+ 
         rubiModel.fetch(text: "東西") { (res, err) in
             DispatchQueue.main.async {
                 print(res?.converted)
             }
         }
     }
+    
+    @IBAction func favoriteButton(_ sender: UIButton) {
+    }
+    
     
 }
 

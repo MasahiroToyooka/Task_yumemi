@@ -16,6 +16,7 @@
 		C1A5D3A02330F99E00783C58 /* ConvertTextModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1A5D39F2330F99E00783C58 /* ConvertTextModel.swift */; };
 		C1A5D3A42331595000783C58 /* ConvertTextViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1A5D3A32331595000783C58 /* ConvertTextViewModel.swift */; };
 		C1A5D3A92332A65200783C58 /* RubiModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1A5D3A82332A65200783C58 /* RubiModel.swift */; };
+		C1A5D3AD2335687300783C58 /* FavoriteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1A5D3AC2335687300783C58 /* FavoriteViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,6 +32,7 @@
 		C1A5D39F2330F99E00783C58 /* ConvertTextModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConvertTextModel.swift; sourceTree = "<group>"; };
 		C1A5D3A32331595000783C58 /* ConvertTextViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConvertTextViewModel.swift; sourceTree = "<group>"; };
 		C1A5D3A82332A65200783C58 /* RubiModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RubiModel.swift; sourceTree = "<group>"; };
+		C1A5D3AC2335687300783C58 /* FavoriteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteViewController.swift; sourceTree = "<group>"; };
 		C476E1A6835C68A5F73D7267 /* Pods-Task_yumemi.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Task_yumemi.release.xcconfig"; path = "Pods/Target Support Files/Pods-Task_yumemi/Pods-Task_yumemi.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -117,6 +119,7 @@
 			children = (
 				C1A5D36F2330C25A00783C58 /* Main.storyboard */,
 				C1A5D36D2330C25A00783C58 /* ViewController.swift */,
+				C1A5D3AC2335687300783C58 /* FavoriteViewController.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -239,6 +242,7 @@
 				C1A5D36E2330C25A00783C58 /* ViewController.swift in Sources */,
 				C1A5D3A92332A65200783C58 /* RubiModel.swift in Sources */,
 				C1A5D36C2330C25A00783C58 /* AppDelegate.swift in Sources */,
+				C1A5D3AD2335687300783C58 /* FavoriteViewController.swift in Sources */,
 				C1A5D3A42331595000783C58 /* ConvertTextViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
