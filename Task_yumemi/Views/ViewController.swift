@@ -12,9 +12,9 @@ class ViewController: UIViewController {
 
     @IBOutlet weak var inputTextField: UITextField!
     @IBOutlet weak var outputLabel: UILabel!
+    @IBOutlet weak var inputText: UILabel!
     @IBOutlet weak var resultView: UIView!
     
-    @IBOutlet weak var inputText: UILabel!
     
     let viewModel = ConvertTextViewModel()
     
@@ -24,17 +24,20 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        
+        resultView.isHidden = true
     }
 
     
     @IBAction func convertButton(_ sender: UIButton) {
 
+        guard let text = inputTextField.text else { return }
         
- 
-        rubiModel.fetch(text: "東西") { (res, err) in
+        rubiModel.fetch(text: text) { (res, err) in
             DispatchQueue.main.async {
-                print(res?.converted)
+                self.outputLabel.text = res?.converted
+                self.inputText.text = text
+                self.resultView.isHidden = false
             }
         }
     }
