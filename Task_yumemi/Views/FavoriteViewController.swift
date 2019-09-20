@@ -18,6 +18,8 @@ class FavoriteViewController: UIViewController, UITableViewDelegate, UITableView
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        tableView.register(UINib(nibName: "FavoriteCell", bundle: nil), forCellReuseIdentifier: "Cell")
+        
         tableView.delegate = self
         tableView.dataSource = self
     }
@@ -38,9 +40,11 @@ class FavoriteViewController: UIViewController, UITableViewDelegate, UITableView
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
-        cell.textLabel?.text = inputArray[indexPath.row]
+        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! FavoriteCell
         
+        cell.outputLabel.text = outputArray[indexPath.row]
+        cell.inputLabel.text = inputArray[indexPath.row]
+
         return cell
     }
     

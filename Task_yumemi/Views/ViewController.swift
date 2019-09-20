@@ -73,7 +73,6 @@ class ViewController: UIViewController {
         if inputTextField.text!.isEmpty || inputText.text == inputTextField.text {
             print("から")
         } else {
-            
         
             favoriteButton.setTitle("☆", for: .normal)
             favoriteState = 0
