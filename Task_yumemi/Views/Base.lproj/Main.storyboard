@@ -10,7 +10,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Item-->
+        <!--ホーム-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Task_yumemi" customModuleProvider="target" sceneMemberID="viewController">
@@ -46,7 +46,7 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="東西南北" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YwM-Ds-BLl">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="東西南北" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YwM-Ds-BLl">
                                         <rect key="frame" x="46" y="58" width="223" height="66"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="40"/>
@@ -95,7 +95,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item" id="4It-hv-Kpu"/>
+                    <tabBarItem key="tabBarItem" title="ホーム" image="家のアイコン素材" id="4It-hv-Kpu"/>
                     <connections>
                         <outlet property="favoriteButton" destination="FH6-jf-EZu" id="YMQ-nw-XaG"/>
                         <outlet property="inputText" destination="YwM-Ds-BLl" id="MQD-VR-AJd"/>
@@ -108,7 +108,7 @@
             </objects>
             <point key="canvasLocation" x="957.97101449275374" y="20.758928571428569"/>
         </scene>
-        <!--Item-->
+        <!--保存済み-->
         <scene sceneID="alE-jT-aHn">
             <objects>
                 <viewController id="umV-zc-AeP" customClass="FavoriteViewController" customModule="Task_yumemi" customModuleProvider="target" sceneMemberID="viewController">
@@ -116,38 +116,47 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="q5p-UH-ZUr">
-                                <rect key="frame" x="0.0" y="44" width="414" height="769"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="q5p-UH-ZUr">
+                                <rect key="frame" x="0.0" y="90" width="414" height="723"/>
+                                <color key="backgroundColor" red="0.90588235289999997" green="0.92549019610000005" blue="0.94117647059999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" id="rSy-XO-w5s">
                                         <rect key="frame" x="0.0" y="28" width="414" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="rSy-XO-w5s" id="GFY-0d-cNQ">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
+                            <navigationBar userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cn9-h7-w1f">
+                                <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                                <items>
+                                    <navigationItem title="保存済み" id="Afl-oH-9Mi"/>
+                                </items>
+                            </navigationBar>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="q5p-UH-ZUr" firstAttribute="top" secondItem="YEG-pv-PJc" secondAttribute="top" id="6JN-p5-3oT"/>
+                            <constraint firstItem="cn9-h7-w1f" firstAttribute="top" secondItem="YEG-pv-PJc" secondAttribute="top" id="BK6-rC-f24"/>
                             <constraint firstItem="YEG-pv-PJc" firstAttribute="trailing" secondItem="q5p-UH-ZUr" secondAttribute="trailing" id="Gzh-bg-bhY"/>
+                            <constraint firstItem="cn9-h7-w1f" firstAttribute="leading" secondItem="YEG-pv-PJc" secondAttribute="leading" id="KS4-73-8TJ"/>
+                            <constraint firstItem="cn9-h7-w1f" firstAttribute="trailing" secondItem="YEG-pv-PJc" secondAttribute="trailing" id="RMI-37-3Ze"/>
                             <constraint firstItem="YEG-pv-PJc" firstAttribute="bottom" secondItem="q5p-UH-ZUr" secondAttribute="bottom" id="rwD-LH-NIu"/>
+                            <constraint firstItem="q5p-UH-ZUr" firstAttribute="top" secondItem="cn9-h7-w1f" secondAttribute="bottom" constant="2" id="vUw-Ox-lkt"/>
                             <constraint firstItem="q5p-UH-ZUr" firstAttribute="leading" secondItem="YEG-pv-PJc" secondAttribute="leading" id="xfo-E5-x6u"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="YEG-pv-PJc"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item" id="t1e-qv-rO8"/>
+                    <tabBarItem key="tabBarItem" title="保存済み" image="シャープな星の無料アイコン" id="t1e-qv-rO8"/>
                     <connections>
                         <outlet property="tableView" destination="q5p-UH-ZUr" id="xhR-qf-8Ho"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HKt-lx-ykw" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="958" y="696"/>
+            <point key="canvasLocation" x="957.97101449275374" y="695.75892857142856"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="ckI-89-eVE">
@@ -168,4 +177,8 @@
             <point key="canvasLocation" x="47.826086956521742" y="20.758928571428569"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="シャープな星の無料アイコン" width="32" height="32"/>
+        <image name="家のアイコン素材" width="32" height="32"/>
+    </resources>
 </document>
