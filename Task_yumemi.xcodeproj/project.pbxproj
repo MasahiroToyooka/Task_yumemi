@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C1263AD92336CD7B000BE2DC /* FavoriteDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1263AD82336CD7B000BE2DC /* FavoriteDataSource.swift */; };
 		C1A5D36C2330C25A00783C58 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1A5D36B2330C25A00783C58 /* AppDelegate.swift */; };
 		C1A5D36E2330C25A00783C58 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1A5D36D2330C25A00783C58 /* ViewController.swift */; };
 		C1A5D3712330C25A00783C58 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C1A5D36F2330C25A00783C58 /* Main.storyboard */; };
@@ -19,6 +20,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		C1263AD82336CD7B000BE2DC /* FavoriteDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteDataSource.swift; sourceTree = "<group>"; };
 		C1A5D3682330C25A00783C58 /* Task_yumemi.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Task_yumemi.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C1A5D36B2330C25A00783C58 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C1A5D36D2330C25A00783C58 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -76,6 +78,7 @@
 			isa = PBXGroup;
 			children = (
 				C1A5D3A82332A65200783C58 /* RubiModel.swift */,
+				C1263AD82336CD7B000BE2DC /* FavoriteDataSource.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -168,6 +171,7 @@
 				C1A5D3B02335888C00783C58 /* FavoriteCell.swift in Sources */,
 				C1A5D3A92332A65200783C58 /* RubiModel.swift in Sources */,
 				C1A5D36C2330C25A00783C58 /* AppDelegate.swift in Sources */,
+				C1263AD92336CD7B000BE2DC /* FavoriteDataSource.swift in Sources */,
 				C1A5D3AD2335687300783C58 /* FavoriteViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
