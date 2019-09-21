@@ -10,9 +10,11 @@ import UIKit
 
 class FavoriteCell: UITableViewCell {
 
+    // ひらがなを表示するラベル
     @IBOutlet weak var outputLabel: UILabel!
-    @IBOutlet weak var inputLabel: UILabel!
     
+    // 漢字つきのテキストを表示するラベル
+    @IBOutlet weak var inputLabel: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -22,7 +24,5 @@ class FavoriteCell: UITableViewCell {
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
 
-        // Configure the view for the selected state
     }
-    
 }

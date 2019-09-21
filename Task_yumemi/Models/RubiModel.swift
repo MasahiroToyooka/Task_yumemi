@@ -11,7 +11,6 @@ import Foundation
 
 class RubiModel {
     
-    
     func fetch(text: String, completion: @escaping (Rubi?, Error?) -> ()) {
         
         //URLRequestを設定
@@ -27,12 +26,8 @@ class RubiModel {
             print("json生成に失敗しました")
             return
         }
-        
         //Bodyにセット
         request.httpBody = uploadData
-        
-        //データ転送を管理するためのセッションを生成
-//        let session = URLSession(configuration: .default, delegate: nil, delegateQueue: OperationQueue.main)
         
         URLSession.shared.dataTask(with: request) { (data, res, err) in
             if let err = err {

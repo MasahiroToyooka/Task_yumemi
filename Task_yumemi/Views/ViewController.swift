@@ -10,20 +10,24 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    /// 検索用のtextField
     @IBOutlet weak var inputTextField: UITextField!
-    @IBOutlet weak var outputLabel: UILabel!
-    @IBOutlet weak var inputText: UILabel!
+    
+    /// 検索結果をまとめて表示するためのview
     @IBOutlet weak var resultView: UIView!
     
+    @IBOutlet weak var inputLabel: UILabel!
+    @IBOutlet weak var outputLabel: UILabel!
+    
+    /// お気に入りボタン
     @IBOutlet weak var favoriteButton: UIButton!
-    
-    
-    let viewModel = ConvertTextViewModel()
     
     let rubiModel = RubiModel()
     
+    /// favoriteButtonの状態を管理する変数。　0がデフォルト1がお気に入り
     var favoriteState: Int = 0
     
+    // 検索内容、結果を保存する配列
     var inputArray = [String]()
     var outputArray = [String]()
     
@@ -46,6 +50,7 @@ class ViewController: UIViewController {
         let userDefault = UserDefaults.standard
         
         if favoriteState == 0 {
+            // お気に入りを追加する処理
             
             if userDefault.object(forKey: "inputArray") != nil {
                 
@@ -56,16 +61,14 @@ class ViewController: UIViewController {
             self.inputArray.append(self.inputTextField.text!)
             self.outputArray.append(self.outputLabel.text!)
             
-            print(outputArray.count)
             favoriteButton.setTitle("★", for: .normal)
             favoriteState = 1
         } else {
+            // お気に入りを取り消す処理
             
             self.inputArray.removeLast()
             self.outputArray.removeLast()
-            
-            print(outputArray.count)
-            
+                        
             favoriteButton.setTitle("☆", for: .normal)
             favoriteState = 0
         }
@@ -74,20 +77,25 @@ class ViewController: UIViewController {
         userDefault.set(self.outputArray, forKey: "outputArray")
     }
     
+    // 変換ボタンのアクション
     @IBAction func convertButton(_ sender: UIButton) {
         
-        if inputTextField.text!.isEmpty || inputText.text == inputTextField.text {
-            print("から")
+        // テキストがからの状態、同じ検索内容の時は反応させない
+        if inputTextField.text!.isEmpty || inputLabel.text == inputTextField.text {
+            print("同じ検索内容または空")
         } else {
-        
+            
+            // 検索したらいいねボタンをデフォルトの状態に戻す
             favoriteButton.setTitle("☆", for: .normal)
             favoriteState = 0
             
             rubiModel.fetch(text: inputTextField.text!) { (res, err) in
                 DispatchQueue.main.async {
+                    
                     self.outputLabel.text = res?.converted
-                    self.inputText.text = self.inputTextField.text
+                    self.inputLabel.text = self.inputTextField.text
                     self.resultView.isHidden = false
+                    self.inputTextField.resignFirstResponder()
                 }
             }
         }
