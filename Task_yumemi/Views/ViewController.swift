@@ -31,8 +31,14 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         
         resultView.isHidden = true
+        inputTextField.delegate = self
         
         favoriteButton.addTarget(self, action: #selector(favoriteAction), for: .touchUpInside)
+    }
+    
+    //画面をタッチした時に呼ばれる
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        inputTextField.resignFirstResponder()
     }
 
     @objc func favoriteAction() {
@@ -85,6 +91,14 @@ class ViewController: UIViewController {
                 }
             }
         }
+    }
+}
+
+extension ViewController: UITextFieldDelegate {
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        inputTextField.resignFirstResponder()
+        return true
     }
 }
 

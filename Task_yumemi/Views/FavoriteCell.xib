@@ -23,16 +23,16 @@
                         <rect key="frame" x="16" y="8" width="345" height="86.5"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="VmY-bU-RCa">
-                                <rect key="frame" x="0.0" y="0.0" width="345" height="86.5"/>
+                                <rect key="frame" x="8" y="8" width="329" height="70.5"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="とうざいなんぼく" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wRk-je-yJK">
-                                        <rect key="frame" x="0.0" y="0.0" width="345" height="43.5"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="とうざいなんぼく" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wRk-je-yJK">
+                                        <rect key="frame" x="0.0" y="0.0" width="329" height="35.5"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="東西南北" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dbp-MO-reI">
-                                        <rect key="frame" x="0.0" y="43.5" width="345" height="43"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="東西南北" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dbp-MO-reI">
+                                        <rect key="frame" x="0.0" y="35.5" width="329" height="35"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -42,10 +42,10 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="VmY-bU-RCa" firstAttribute="leading" secondItem="OSc-z9-1aN" secondAttribute="leading" id="8QF-HM-vOc"/>
-                            <constraint firstAttribute="bottom" secondItem="VmY-bU-RCa" secondAttribute="bottom" id="Uvl-ZE-phT"/>
-                            <constraint firstAttribute="trailing" secondItem="VmY-bU-RCa" secondAttribute="trailing" id="ZU7-XQ-h5V"/>
-                            <constraint firstItem="VmY-bU-RCa" firstAttribute="top" secondItem="OSc-z9-1aN" secondAttribute="top" id="ctr-a3-upG"/>
+                            <constraint firstItem="VmY-bU-RCa" firstAttribute="leading" secondItem="OSc-z9-1aN" secondAttribute="leading" constant="8" id="8QF-HM-vOc"/>
+                            <constraint firstAttribute="bottom" secondItem="VmY-bU-RCa" secondAttribute="bottom" constant="8" id="Uvl-ZE-phT"/>
+                            <constraint firstAttribute="trailing" secondItem="VmY-bU-RCa" secondAttribute="trailing" constant="8" id="ZU7-XQ-h5V"/>
+                            <constraint firstItem="VmY-bU-RCa" firstAttribute="top" secondItem="OSc-z9-1aN" secondAttribute="top" constant="8" id="ctr-a3-upG"/>
                         </constraints>
                         <userDefinedRuntimeAttributes>
                             <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
