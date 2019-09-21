@@ -26,8 +26,6 @@ class ViewController: UIViewController {
     
     let datasource = FavoriteDataSource()
     
-    /// favoriteButtonの状態を管理する変数。　0がデフォルト1がお気に入り
-    var favoriteState: Int = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -38,16 +36,6 @@ class ViewController: UIViewController {
         favoriteButton.addTarget(self, action: #selector(favoriteAction), for: .touchUpInside)
     }
     
-    override func viewWillAppear(_ animated: Bool) {
-        
-        print("datasource.favoriteState",datasource.favoriteState)
-        
-        if datasource.favoriteState == 0 {
-            print(123)
-            favoriteButton.setTitle("☆", for: .normal)
-        }
-    }
-    
     //画面をタッチした時に呼ばれる
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         inputTextField.resignFirstResponder()
@@ -55,18 +43,8 @@ class ViewController: UIViewController {
     
     @objc func favoriteAction() {
         
-        if datasource.favoriteState == 0 {
-            
-            datasource.saveData(inputText: self.inputTextField.text!, outputText: self.outputLabel.text!)
-            favoriteButton.setTitle("★", for: .normal)
-            datasource.favoriteState = 1
-            
-        } else {
-            
-            datasource.deleteLastData()
-            favoriteButton.setTitle("☆", for: .normal)
-            datasource.favoriteState = 0
-        }
+        datasource.saveData(inputText: self.inputTextField.text!, outputText: self.outputLabel.text!)
+        favoriteButton.setTitle("★", for: .normal)
     }
     
     // 変換ボタンのアクション
@@ -79,7 +57,6 @@ class ViewController: UIViewController {
             
             // 検索したらいいねボタンをデフォルトの状態に戻す
             favoriteButton.setTitle("☆", for: .normal)
-            favoriteState = 0
             
             rubiModel.fetch(text: inputTextField.text!) { (res, err) in
                 DispatchQueue.main.async {

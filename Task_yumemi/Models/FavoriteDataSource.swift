@@ -13,8 +13,6 @@ class FavoriteDataSource {
     var inputArray = [String]()
     var outputArray = [String]()
     
-    var favoriteState = 0
-    
     let userDefault = UserDefaults.standard
     
     func loadData() {
@@ -25,7 +23,6 @@ class FavoriteDataSource {
             self.outputArray = UserDefaults.standard.object(forKey: "outputArray") as! [String]
         }
     }
-    
     
     func saveData(inputText: String, outputText: String) {
         
@@ -42,7 +39,6 @@ class FavoriteDataSource {
         
         loadData()
         
-        favoriteState = 0
         
         self.inputArray.removeLast()
         self.outputArray.removeLast()
@@ -53,10 +49,6 @@ class FavoriteDataSource {
     
     
     func deleteData(indexPath: Int) {
-        
-        if indexPath == inputArray.count - 1 {
-            deleteLastData()
-        } else {
             
             loadData()
             
@@ -65,7 +57,6 @@ class FavoriteDataSource {
             
             userDefault.set(self.inputArray, forKey: "inputArray")
             userDefault.set(self.outputArray, forKey: "outputArray")
-        }
     }
     
     func count() -> Int {
