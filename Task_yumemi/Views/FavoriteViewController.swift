@@ -42,6 +42,10 @@ class FavoriteViewController: UIViewController, UITableViewDelegate, UITableView
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! FavoriteCell
         
+        if inputArray.count == 0 {
+            
+        }
+        
         cell.outputLabel.text = outputArray[indexPath.row]
         cell.inputLabel.text = inputArray[indexPath.row]
 
