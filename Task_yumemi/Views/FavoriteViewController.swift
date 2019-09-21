@@ -12,9 +12,7 @@ class FavoriteViewController: UIViewController, UITableViewDelegate, UITableView
     
     @IBOutlet weak var tableView: UITableView!
     
-    // 検索内容、結果を保存する配列
-    var inputArray = [String]()
-    var outputArray = [String]()
+    let datasource = FavoriteDataSource()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,27 +25,20 @@ class FavoriteViewController: UIViewController, UITableViewDelegate, UITableView
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-                
-        // UserDafaultsからデータ取得してtableViewに反映
-        if UserDefaults.standard.object(forKey: "inputArray") != nil {
-            
-            self.inputArray = UserDefaults.standard.object(forKey: "inputArray") as! [String]
-            self.outputArray = UserDefaults.standard.object(forKey: "outputArray") as! [String]
-            
-            self.tableView.reloadData()
-        }
+        
+        datasource.loadData()
+        self.tableView.reloadData()
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return inputArray.count
+        return datasource.count()
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! FavoriteCell
         
-        cell.outputLabel.text = outputArray[indexPath.row]
-        cell.inputLabel.text = inputArray[indexPath.row]
-        
+        cell.outputLabel.text = datasource.outputArray[indexPath.row]
+        cell.inputLabel.text = datasource.inputArray[indexPath.row]
         return cell
     }
     
@@ -55,11 +46,8 @@ class FavoriteViewController: UIViewController, UITableViewDelegate, UITableView
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         
         if editingStyle == .delete {
-            inputArray.remove(at: indexPath.row)
-            outputArray.remove(at: indexPath.row)
             
-            UserDefaults.standard.set(self.inputArray, forKey: "inputArray")
-            UserDefaults.standard.set(self.outputArray, forKey: "outputArray")
+            datasource.deleteData(indexPath: indexPath.row)
             
             self.tableView.reloadData()
         }

@@ -9,7 +9,7 @@
 import UIKit
 
 class ViewController: UIViewController {
-
+    
     /// 検索用のtextField
     @IBOutlet weak var inputTextField: UITextField!
     
@@ -24,12 +24,10 @@ class ViewController: UIViewController {
     
     let rubiModel = RubiModel()
     
+    let datasource = FavoriteDataSource()
+    
     /// favoriteButtonの状態を管理する変数。　0がデフォルト1がお気に入り
     var favoriteState: Int = 0
-    
-    // 検索内容、結果を保存する配列
-    var inputArray = [String]()
-    var outputArray = [String]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -40,41 +38,35 @@ class ViewController: UIViewController {
         favoriteButton.addTarget(self, action: #selector(favoriteAction), for: .touchUpInside)
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        
+        print("datasource.favoriteState",datasource.favoriteState)
+        
+        if datasource.favoriteState == 0 {
+            print(123)
+            favoriteButton.setTitle("☆", for: .normal)
+        }
+    }
+    
     //画面をタッチした時に呼ばれる
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         inputTextField.resignFirstResponder()
     }
-
+    
     @objc func favoriteAction() {
         
-        let userDefault = UserDefaults.standard
-        
-        if favoriteState == 0 {
-            // お気に入りを追加する処理
+        if datasource.favoriteState == 0 {
             
-            if userDefault.object(forKey: "inputArray") != nil {
-                
-                self.inputArray = userDefault.object(forKey: "inputArray") as! [String]
-                self.outputArray = userDefault.object(forKey: "outputArray") as! [String]
-            }
-            
-            self.inputArray.append(self.inputTextField.text!)
-            self.outputArray.append(self.outputLabel.text!)
-            
+            datasource.saveData(inputText: self.inputTextField.text!, outputText: self.outputLabel.text!)
             favoriteButton.setTitle("★", for: .normal)
-            favoriteState = 1
-        } else {
-            // お気に入りを取り消す処理
+            datasource.favoriteState = 1
             
-            self.inputArray.removeLast()
-            self.outputArray.removeLast()
-                        
+        } else {
+            
+            datasource.deleteLastData()
             favoriteButton.setTitle("☆", for: .normal)
-            favoriteState = 0
+            datasource.favoriteState = 0
         }
-        
-        userDefault.set(self.inputArray, forKey: "inputArray")
-        userDefault.set(self.outputArray, forKey: "outputArray")
     }
     
     // 変換ボタンのアクション
